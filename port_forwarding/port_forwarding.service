@@ -6,6 +6,7 @@ After=network.target network-online.target
 [Service]
 Type=forking
 ExecStart={{INSTALL_DIR}}/port_forwarding/port_forwarding.sh {{DEPLOYMENT_TARGET}}
+ExecStop=pkill socat
  
 [Install]
 WantedBy=multi-user.target
