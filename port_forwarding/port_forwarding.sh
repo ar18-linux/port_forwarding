@@ -84,6 +84,9 @@
 
 ar18.script.import ar18.script.read_target
 ar18.script.import ar18.script.source_or_execute_config
+ar18.script.import ar18.script.version_check
+
+ar18.script.version_check
 
 set +u
 ar18_deployment_target="$(ar18.script.read_target "${1}")"
@@ -95,7 +98,7 @@ for item in "${ports[@]}"; do
   echo "${item}"
   port="$(echo "${item}" | cut -d ' ' -f1)"
   host="$(echo "${item}" | cut -d ' ' -f2)"
-  socat -u tcp-listen:"${port}",reuseaddr,fork tcp:"${host}":"${port}"
+  socat -u tcp-listen:"${port}",reuseaddr,fork tcp:"${host}":"${port}" &
   #ssh -L "${port}":localhost:"${port}" -N -o GatewayPorts=yes "${host}"
 done
 
