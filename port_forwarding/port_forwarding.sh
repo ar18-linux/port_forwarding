@@ -96,6 +96,7 @@ for item in "${ports[@]}"; do
   port="$(echo "${item}" | cut -d ' ' -f1)"
   host="$(echo "${item}" | cut -d ' ' -f2)"
   socat tcp-listen:"${port}",reuseaddr,fork tcp:"${host}":"${port}" &
+  disown -h %1
   #ssh -L "${port}":localhost:"${port}" -N -o GatewayPorts=yes "${host}"
 done
 
