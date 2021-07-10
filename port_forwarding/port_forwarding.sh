@@ -89,7 +89,7 @@ set +u
 ar18_deployment_target="$(ar18.script.read_target "${1}")"
 set -u
 
-ar18.script.source_or_execute_config "source" "setup_port_forwarding" "${ar18_deployment_target}"
+ar18.script.source_or_execute_config "source" "port_forwarding" "${ar18_deployment_target}"
 
 for item in "${ports[@]}"; do
   echo "${item}"
