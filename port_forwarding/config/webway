@@ -1,4 +1,5 @@
 declare -ag ports
 ports=(
   "2222 AR18-TEST"
+  "2223 AR18-TEST"
 )

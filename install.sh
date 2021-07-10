@@ -83,17 +83,18 @@
 #################################SCRIPT_START##################################
 
 ar18.script.import ar18.script.install
+ar18.script.import ar18.pacman.install
 ar18.script.import ar18.script.read_target
 
 . "${script_dir}/vars"
 
-ar18.script.install "${install_dir}" "${module_name}" "${script_dir}"
+ar18.pacman.install socat
 
 set +u
 ar18_deployment_target="$(ar18.script.read_target "${1}")"
 set -u
 
-"${script_dir}/setup_port_forwarding/setup_port_forwarding.sh" "${ar18_deployment_target}"
+ar18.script.install "${install_dir}" "${module_name}" "${script_dir}"
 
 ##################################SCRIPT_END###################################
 set +x

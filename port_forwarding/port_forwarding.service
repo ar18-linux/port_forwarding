@@ -1,0 +1,8 @@
+[Unit]
+Description=Forard ports
+ 
+[Service]
+ExecStart={{INSTALL_DIR}}/port_forwarding/port_forwarding.sh {{DEPLOYMENT_TARGET}}
+ 
+[Install]
+WantedBy=multi-user.target
