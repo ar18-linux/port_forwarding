@@ -52,7 +52,7 @@
   fi
 }
 #################################SCRIPT_START##################################
-set -x
+
 ar18.script.import ar18.script.read_target
 ar18.script.import ar18.script.source_or_execute_config
 
