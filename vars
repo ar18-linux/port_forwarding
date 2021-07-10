@@ -1,4 +1,4 @@
-module_name="setup_port_forwarding"
+module_name="port_forwarding"
 
 if [ ! -v user_name ]; then
   user_name="$(whoami)"
