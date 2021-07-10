@@ -1,5 +1,7 @@
 [Unit]
 Description=Forard ports
+Wants=network-online.target
+After=network.target network-online.target
  
 [Service]
 ExecStart={{INSTALL_DIR}}/port_forwarding/port_forwarding.sh {{DEPLOYMENT_TARGET}}
