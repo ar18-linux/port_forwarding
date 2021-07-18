@@ -185,7 +185,7 @@ ar18.script.import ar18.script.source_or_execute_config
 ar18.script.import ar18.script.version_check
 
 if [ "$(whoami)" != "root" ]; then
-  ar18.script.version_check
+  ar18.script.version_check "${@}"
 fi
 
 set +u
